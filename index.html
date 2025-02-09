@@ -36,6 +36,37 @@
       font-display: swap;
       src: local(''),
     }
+
+    @media (max-width: 768px) {
+      .row.gx-5.d-flex {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Две колонки */
+        grid-template-rows: auto auto !important; /* Две строки */
+        gap: 10px !important;
+        position: relative !important;
+      }
+
+      .col-md-11 {
+        grid-column: 1 / 3 !important; /* Первая картинка занимает всю ширину */
+      }
+
+      .col-md-5.offset-md-1 {
+        grid-column: 1 !important; /* Вторая картинка слева */
+        grid-row: 2 !important;
+      }
+
+      .col-md-6 {
+        grid-column: 2 !important; /* Третья картинка справа */
+        grid-row: 2 !important;
+      }
+
+      /* Чтобы картинки сохраняли пропорции */
+      .shadow.ratio {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+      }
+    }
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
@@ -485,7 +516,7 @@
               Для участия оставь свой тг и номер (в формк будет выбор номера, тг и варианта оплаты)
             </p>
           </div>
-          <div class="col-6">
+          <div class="col-lg-6 col-md-8 col-sm-12">
             <div class="col-12 border p-5 bg-white rounded shadow">
               <h2 class="fw-bold display-5 mb-4">Join the best!</h2>
               <div class="col-12">
