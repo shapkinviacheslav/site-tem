@@ -67,6 +67,17 @@
         object-fit: cover !important;
       }
     }
+
+    .invalid-feedback {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .is-invalid {
+      border-color: red;
+    }
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
@@ -518,28 +529,32 @@
           </div>
           <div class="col-lg-6 col-md-8 col-sm-12">
             <div class="col-12 border p-5 bg-white rounded shadow">
-              <h2 class="fw-bold display-5 mb-4">Join the best!</h2>
+              <h2 class="fw-bold display-5 mb-4">Присоединяйся!</h2>
               <div class="col-12">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
+                  <input type="text" class="form-control" id="floatingInputName" placeholder="name@example.com">
+                  <label for="floatingInputName">Имя</label>
                 </div>
+
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password</label>
+                  <input type="text" class="form-control" id="floatingInputTelegram" placeholder="ksush_a_live">
+                  <label for="floatingInputTelegram">Telegram</label>
                 </div>
+
                 <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPasswordretype" placeholder="Password Retype">
-                  <label for="floatingPassword">Password Retype</label>
+                  <input type="tel" class="form-control" id="floatingPhone" placeholder="79000000000" maxlength="11">
+                  <label for="floatingPhone">Номер телефона</label>
                 </div>
+                <script>
+                  document.getElementById("floatingPhone").addEventListener("input", function(event) {
+                    this.value = this.value.replace(/\D/g, '');
+                  });
+                </script>
+
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-lg mt-4 btn-xl fw-light" type="button">
-                    Join now!</button>
-                </div>
-                <div class="text-center pt-4 mt-4 border-top">
-                  <p>Already have an account?
-                    <a href="#" class="link-primary">Log in</a>
-                  </p>
+                  <button class="btn btn-primary btn-lg mt-4 btn-xl fw-light" type="button" id="joinButton" data-bs-toggle="tooltip" data-bs-placement="top">
+                    Присоединиться!
+                  </button>
                 </div>
               </div>
             </div>
@@ -575,6 +590,113 @@
     </div>
   </div>
 </main>
+<style>
+  .invalid-feedback {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+  }
+</style>
+
+<script>
+  const button = document.getElementById("joinButton");
+  const nameInput = document.getElementById("floatingInputName");
+  const telegramInput = document.getElementById("floatingInputTelegram");
+  const phoneInput = document.getElementById("floatingPhone");
+
+  function showError(input, message) {
+    let errorDiv = input.nextElementSibling.nextElementSibling;
+
+    console.log("showError");
+    console.log(errorDiv);
+    console.log(!errorDiv);
+    console.log((errorDiv && !errorDiv.classList.contains("invalid-feedback")));
+
+
+    if (!errorDiv || (errorDiv && !errorDiv.classList.contains("invalid-feedback"))) {
+      errorDiv = document.createElement("div");
+      errorDiv.classList.add("invalid-feedback");
+      input.parentNode.appendChild(errorDiv);
+    }
+    errorDiv.textContent = message;
+    input.classList.add("is-invalid");
+
+    console.log("# showError");
+  }
+
+  function clearError(input) {
+    input.classList.remove("is-invalid");
+    const errorDiv = input.nextElementSibling.nextElementSibling;
+    if (errorDiv && errorDiv.classList.contains("invalid-feedback")) {
+      errorDiv.textContent = "";
+    }
+  }
+
+  nameInput.addEventListener("input", () => {
+    if (nameInput.value.trim() !== "") {
+      clearError(nameInput);
+    }
+  });
+
+  telegramInput.addEventListener("input", () => {
+    if (telegramInput.value.trim() !== "") {
+      clearError(telegramInput);
+      clearError(phoneInput);
+    }
+  });
+
+  phoneInput.addEventListener("input", () => {
+    if (phoneInput.value.trim() !== "") {
+      clearError(telegramInput);
+      clearError(phoneInput);
+    }
+  });
+
+  button.addEventListener("click", function (event) {
+    let isValid = true;
+
+    if (nameInput.value.trim() === "") {
+      showError(nameInput, "Имя не может отсутствовать");
+      isValid = false;
+    } else {
+      clearError(nameInput);
+    }
+
+    const phone = phoneInput.value.trim();
+    const telegram = telegramInput.value.trim();
+
+    if (!phone && !telegram) {
+      showError(phoneInput, "Укажите телефон или Telegram");
+      showError(telegramInput, "Укажите телефон или Telegram");
+      isValid = false;
+    } else {
+      clearError(phoneInput);
+      clearError(telegramInput);
+    }
+
+    if (!isValid) return;
+
+    fetch("https://api.speak.eng/join", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: nameInput.value, telegram, phone })
+    })
+            .then(response => {
+              if (response.ok) return response.json();
+            })
+            .finally(() => {
+              setTimeout(() => {
+                button.disabled = false;
+              }, 30000);
+            });
+
+    button.disabled = true;
+  });
+</script>
+
+
+
 <footer>
   <div class="container small border-top">
     <div class="row py-5 d-flex justify-content-between">
