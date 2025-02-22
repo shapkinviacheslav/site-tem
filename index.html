@@ -12,6 +12,7 @@
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
   <title>Stride HTML Template - Frontpage one</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/theme.min.css">
   <style>
     /* inter-300 - latin */
@@ -474,7 +475,7 @@
                   <li class="py-2 border-bottom">Aenean sit amet erat nunc</li>
                 </ul>
               </div>
-              <a href="#" class="btn btn-lg mt-3 px-4 btn-primary">Buy now</a>
+              <a href="#" class="btn btn-lg mt-3 px-4 btn-primary" id="service1Button">Buy now</a>
             </div>
           </div>
         </div>
@@ -490,7 +491,7 @@
                   <li class="py-3 border-bottom">Здесь будет инфа о том, как проходит встреча. Время кол-выо человек, материалы</li>
                 </ul>
               </div>
-              <a href="#" class="btn btn-primary btn-xl mt-3">Buy now</a>
+              <a href="#" class="btn btn-primary btn-xl mt-3" id="service2Button">Buy now</a>
             </div>
           </div>
         </div>
@@ -508,14 +509,14 @@
                   <li class="py-2 border-bottom">Aenean sit amet erat nunc</li>
                 </ul>
               </div>
-              <a href="#" class="btn btn-lg mt-3 px-4 btn-primary">Buy now</a>
+              <a href="#" class="btn btn-lg mt-3 px-4 btn-primary" id="service3Button">Buy now</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-vh-4">
+  <div class="py-vh-4" id="form">
     <div class="position-relative bg-primary bg-cover bp-center" style="background-image: url(/img/b3a3ee2e-1024.jpeg);">
       <div class="position-absolute w-100 h-100 opacity-75 bg-primary"></div>
       <div class="container">
@@ -541,7 +542,7 @@
                   <label for="floatingInputTelegram">Telegram</label>
                 </div>
 
-                <div class="form-floating">
+                <div class="form-floating mb-3">
                   <input type="tel" class="form-control" id="floatingPhone" placeholder="79000000000" maxlength="11">
                   <label for="floatingPhone">Номер телефона</label>
                 </div>
@@ -550,6 +551,16 @@
                     this.value = this.value.replace(/\D/g, '');
                   });
                 </script>
+
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="floatingService" aria-label="Выберите услугу">
+                    <option selected disabled>Выберите услугу</option>
+                    <option value="service1">Одна встреча</option>
+                    <option value="service2">Абонемент и доступ в коммьюнити</option>
+                    <option value="service3">Консультация-разбор</option>
+                  </select>
+                  <label for="floatingService">Тип услуги</label>
+                </div>
 
                 <div class="d-grid">
                   <button class="btn btn-primary btn-lg mt-4 btn-xl fw-light" type="button" id="joinButton" data-bs-toggle="tooltip" data-bs-placement="top">
@@ -590,20 +601,13 @@
     </div>
   </div>
 </main>
-<style>
-  .invalid-feedback {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    display: block;
-  }
-</style>
 
 <script>
   const button = document.getElementById("joinButton");
   const nameInput = document.getElementById("floatingInputName");
   const telegramInput = document.getElementById("floatingInputTelegram");
   const phoneInput = document.getElementById("floatingPhone");
+  const typeInput = document.getElementById("floatingService");
 
   function showError(input, message) {
     let errorDiv = input.nextElementSibling.nextElementSibling;
@@ -664,7 +668,13 @@
     }
 
     const phone = phoneInput.value.trim();
-    const telegram = telegramInput.value.trim();
+    let telegram = telegramInput.value.trim();
+    if (!telegram.startsWith("@")) {
+      telegram = "@" + telegram;
+    }
+
+    const selectedOption = typeInput.options[typeInput.selectedIndex];
+    const type = selectedOption.textContent;
 
     if (!phone && !telegram) {
       showError(phoneInput, "Укажите телефон или Telegram");
@@ -677,10 +687,10 @@
 
     if (!isValid) return;
 
-    fetch("https://api.speak.eng/join", {
+    fetch("https://api.ksushalive.ru/createApplication", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: nameInput.value, telegram, phone })
+      body: JSON.stringify({ name: nameInput.value, telegram, phone, type })
     })
             .then(response => {
               if (response.ok) return response.json();
@@ -688,10 +698,12 @@
             .finally(() => {
               setTimeout(() => {
                 button.disabled = false;
-              }, 30000);
+                button.textContent = "Присоединиться!";
+              }, 300);
             });
 
     button.disabled = true;
+    button.textContent = "Заявка отправлена!";
   });
 </script>
 
@@ -786,6 +798,40 @@
 
     console.log(scrollpos)
   })
+</script>
+
+<script>
+  const button1 = document.getElementById("service1Button");
+  const button2 = document.getElementById("service2Button");
+  const button3 = document.getElementById("service3Button");
+
+  const selectElement = document.getElementById('floatingService');
+  const formElement = document.getElementById("form");
+
+  button1.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    selectElement.value = "service1";
+    selectElement.dispatchEvent(new Event('change'));
+
+    formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  button2.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    selectElement.value = "service2";
+    selectElement.dispatchEvent(new Event('change'));
+
+    formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  button3.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    selectElement.value = "service3";
+    selectElement.dispatchEvent(new Event('change'));
+
+    formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 </script>
 </body>
 </html>
