@@ -29,7 +29,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/theme.min.css">
   <style>
-    /* inter-300 - latin */
     @font-face {
       font-family: 'Inter';
       font-style: normal;
@@ -75,7 +74,6 @@
         grid-row: 2 !important;
       }
 
-      /* Чтобы картинки сохраняли пропорции */
       .shadow.ratio {
         width: 100% !important;
         height: auto !important;
@@ -93,13 +91,29 @@
     .is-invalid {
       border-color: red;
     }
+
+    .text-color {
+      color: #000000;
+    }
+    .button-color {
+      color: #ffffff;
+      background-color: #000000;
+      border-color: #000000;
+      font-weight: 500;
+    }
+    .button-color:hover {
+      background-color: #d557cc;
+      border-color: #d557cc;
+      color: #ffffff;
+    }
+
+    .saturate { filter: saturate(3); }
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
 <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top bg-light" tabindex="0">
   <div class="container">
-    <!--  TODO  -->
-    <a class="navbar-brand pe-4 fs-4" href="https://t.me/ksush_a_live">
+    <a class="navbar-brand pe-4 fs-4" href="https://t.me/+3weRs3PNhSc4NDVi">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
       </svg>
@@ -110,57 +124,49 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-<!--    TODO  скролл    -->
-        <li class="nav-item">
-          <a class="nav-link" href="#services" aria-label="Brings you to the frontpage">
-            Services
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#aboutus">
-            About us
+            О клубе
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#numbers">
-            Numbers
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#gallery">
-            Gallery
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#workwithus">
-            Work with us
+          <a class="nav-link" href="#advantages">
+            Почему мы
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#testimonials">
-            Testimonials
+            Отзывы
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#tarifs">
+            Тарифы участия
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#form">
+            Записаться
           </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<main>
+<main class="text-color">
   <div class="wrapper bg-light py-vh-5">
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-12 col-xl-8 text-center">
-          <div class="text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor" class="bi bi-shield-check" viewbox="0 0 16 16">
-              <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
-              <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-            </svg>
-          </div>
-          <h1 class="fw-bold display-9">Разговорный клуб на темы психологии и саморазвития</h1>
-          <h1 class="fw-bold display-2">PRACTICE MAKES PERFECT</h1>
-          <h2 class="fw-bold display-9">комьюнити мечты</h2>
-          <p class="lead mb-3">Общаясь на английском, хочешь чувствовать себя уверенно, говорить смело и естественно? Приходи на встречи и прокачивай свои навыки говорения</p>
-          <a href="#" class="btn btn-primary px-5 py-3 shadow me-1">Попробуй бесплатно</a>
+          <h3 class="fw-bold display-10">Разговорный клуб по английскому</h3>
+          <h3 class="fw-bold display-10">на темы психологии и саморазвития</h3>
+          <h2 class="fw-bold display-4">SPEAK.ENG THERAPY</h2>
+          <p class="lead mb-3">
+            Общаясь на английском, хочешь чувствовать себя уверенно, говорить смело и естественно?
+            Приходи на встречи — прокачивай навыки говорения в классной компани и развивайся
+          </p>
+          <a href="#tarifs" class="btn btn-primary px-5 py-3 shadow me-1 button-color">Записаться</a>
+          <p class="lead fw-bold" style="color: #d557cc; padding-top: 10px !important;">–70% на первую встречу</p>
         </div>
       </div>
     </div>
@@ -175,6 +181,7 @@
               </div>
             </div>
             <div class="col-md-5 offset-md-1">
+              <!-- TODO: ДОбавть другую картинку -->
               <div class="shadow ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end" data-aos="fade-up" style="background-image: url(img/new_photos/ksusha.PNG);">
               </div>
             </div>
@@ -186,73 +193,77 @@
         </div>
         <div class="col-lg-6">
           <h4 class="py-4 border-dark" data-aos="fade-left" style="padding-bottom: 0 !important">
-            Боишься неправильно что-то сказать, выглядеть глупо?
+            Боишься неправильно сказать? <br>Выглядеть глупо? Затупить и долго молчать?<br>Хочешь использовать умную лексику?
           </h4>
-          <h4 class="py-4 border-dark" data-aos="fade-left" style="padding-top: 0 !important; padding-bottom: 0 !important">
-            Затупить и долго молчать?
+          <h4 class="py-4 border-dark" data-aos="fade-left" style="padding-top: 10px !important; padding-bottom: 10px !important">
+            В разговорном клубе мы говорим Goodbye страхам и Hello — новому уровню!
           </h4>
-          <h4 class="py-4 border-dark" data-aos="fade-left" style="padding-top: 0 !important; padding-bottom: 0 !important">
-            Или хочешь использовать умную лексику, которую выучила?
-          </h4>
-          <h4 class="py-4 border-dark" data-aos="fade-left" style="padding-top: 10px !important; padding-bottom: 0 !important">
-            В разговорном клубе мы говорим Goodbye страхам и Hello — новому уровню.
-            Рушим языковые барьеры!
-          </h4>
-          <p data-aos="fade-left" data-aos-delay="200" style="font-size: 19px !important">
+          <p data-aos="fade-left" data-aos-delay="200" style="font-size: 19px !important; padding-bottom: 10px !important">
             Я — Ксюша Alive, коуч и преподавательница английского с опытом 7+ лет.
             Изучаю язык уже больше 18 лет, обучаюсь у коллег и работаю со студентами всех уровней.
-            Я понимаю все твои трудности и вижу ошибки”, как опыт, как движущую силу,
+            <br>
+            Я понимаю все твои трудности и вижу «ошибки», как опыт, как движущую силу,
             благодаря которой мы растем.
           </p>
+          <div class="text-center">
+            <a href="#tarifs" class="btn btn-primary px-5 py-3 shadow me-1 button-color">Записаться</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="advantages">
     <div class="row py-vh-4">
-      <div class="col-md-6 col-lg-4 border-end" data-aos="fade-up">
+      <div class="col-md-6 col-lg-3 border-end" data-aos="fade-up">
         <div class="d-flex">
           <div class="col-md-3 flex-fill pt-3 pe-3 pe-md-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-box-seam" viewbox="0 0 16 16">
-              <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-            </svg>
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/friends.png" alt="friends"/>
           </div>
           <div class="col-md-9 flex-fill">
             <h3 class="h5 my-2">Безопасно</h3>
             <p>
-              Поддерживающая среда — все изучают язык и понимают переживания друг друга
+              Поддерживающая среда, все изучают язык и понимают переживания друг друга
             </p>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 border-end" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-md-6 col-lg-3 border-end" data-aos="fade-up" data-aos-delay="200">
         <div class="d-flex">
           <div class="col-md-3 flex-fill pt-3 pt-3 pe-3 pe-md-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-card-checklist" viewbox="0 0 16 16">
-              <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-              <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
-            </svg>
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/handshake-heart.png" alt="handshake-heart"/>
           </div>
           <div class="col-md-9 flex-fill">
             <h3 class="h5 my-2">Комфортно</h3>
             <p>
-              На созвонах кайфовая атмосфера, как на встрече с подружками — знакомься и находи единомышленниц
-            </p>          </div>
+              Кайфовая атмосфера, как с подружками! Знакомься и находи единомышленниц
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-md-6 col-lg-3 border-end" data-aos="fade-up" data-aos-delay="400">
         <div class="d-flex">
           <div class="col-md-3 flex-fill pt-3 pt-3 pe-3 pe-md-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-window-sidebar" viewbox="0 0 16 16">
-              <path d="M2.5 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
-              <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v2H1V3a1 1 0 0 1 1-1h12zM1 13V6h4v8H2a1 1 0 0 1-1-1zm5 1V6h9v7a1 1 0 0 1-1 1H6z"/>
-            </svg>
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/critical-thinking--v1.png" alt="critical-thinking--v1"/>
           </div>
           <div class="col-md-9 flex-fill">
             <h3 class="h5 my-2">Эффективно</h3>
             <p>
-              Актуальные, важные и интересные <b>тебе</b> темы: психология, самопознание и саморазвитие — невозможно не высказаться
-            </p>          </div>
+              Обсуждаем актуальные, важные и интересные темы: самопознание и психпросвет
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="d-flex">
+          <div class="col-md-3 flex-fill pt-3 pt-3 pe-3 pe-md-0 saturate">
+            <img width="48" height="48" src="/img/icons8-hundred-points-48.png" alt="hundred-points"/>
+          </div>
+          <div class="col-md-9 flex-fill">
+            <h3 class="h5 my-2">Эффективно</h3>
+            <p>
+              Молчать не будет никто — нет лучшего способа прокачать speaking
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -474,7 +485,7 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="tarifs">
     <div class="row py-vh-4">
       <div class="row text-center gx-3 d-flex align-items-top">
         <div class="col mb-4">
@@ -685,9 +696,6 @@
 
     const phone = phoneInput.value.trim();
     let telegram = telegramInput.value.trim();
-    if (!telegram.startsWith("@")) {
-      telegram = "@" + telegram;
-    }
 
     const selectedOption = typeInput.options[typeInput.selectedIndex];
     const type = selectedOption.textContent;
@@ -702,6 +710,10 @@
     }
 
     if (!isValid) return;
+
+    if (!telegram.startsWith("@")) {
+      telegram = "@" + telegram;
+    }
 
     fetch("https://api.ksushalive.ru/createApplication", {
       method: "POST",
