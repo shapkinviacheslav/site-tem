@@ -693,7 +693,10 @@
       body: JSON.stringify({ name: nameInput.value, telegram, phone, type })
     })
             .then(response => {
-              if (response.ok) return response.json();
+              if (response.ok) {
+                ym(100014198,'reachGoal','form_sent')
+                return { ok: "ok" }
+              }
             })
             .finally(() => {
               setTimeout(() => {
