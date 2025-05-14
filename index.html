@@ -115,6 +115,21 @@
 
     .saturate { filter: saturate(3); }
   </style>
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1836098597236424');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=1836098597236424&ev=PageView&noscript=1"
+  /></noscript>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navScroll" style="padding-top: 105px">
 <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top bg-light" tabindex="0">
@@ -152,78 +167,73 @@
   </div>
 </nav>
 <main class="text-color">
-  <div class="wrapper bg-light py-vh-4 main-background">
+  <div class="wrapper bg-light py-2 main-background">
     <div class="container">
-      <div class="row d-flex justify-content-center">
-        <br>
-        <div class="col-12 col-xl-8 text-center">
-          <h3 class="fw-bold display-10">Разговорный клуб по английскому</h3>
-          <h3 class="fw-bold display-10">на темы психологии и саморазвития</h3>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8 text-center">
+          <h3 class="fw-bold fs-3 fs-md-3">Разговорный клуб по английскому</h3>
+          <h3 class="fw-bold fs-3 fs-md-3">на темы психологии и саморазвития</h3>
           <h2 class="fw-bold display-4">SPEAK.ENG THERAPY</h2>
           <p class="lead mb-3">
             Общаясь на английском, хочешь чувствовать себя уверенно,
-            <br>
+            <br class="d-none d-md-block">
             говорить смело и естественно?
           </p>
-          <p class="lead mb-3">
+
+          <p class="lead mb-4">
             Приходи на встречи — развивайся и прокачивай навыки
-            <br>
+            <br class="d-none d-md-block">
             говорения в классной компании
           </p>
-          <a href="#tarifs" class="btn btn-primary px-5 py-3 shadow me-1 button-color">Записаться</a>
-          <p class="lead fw-bold" style="color: #d557cc; padding-top: 10px !important;">–60% на первую встречу</p>
+          <a href="#tarifs" class="btn btn-primary px-4 py-2 shadow button-color">Записаться</a>
+          <p class="lead fw-bold mt-3" style="color: #d557cc;">–60% на первую встречу</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-vh-4 bg-gray-100 w-100 overflow-hidden" id="aboutus">
+  <div class="py-2 bg-gray-100 w-100 overflow-hidden" id="aboutus">
     <div class="container">
-      <div class="row d-flex justify-content-between align-items-center">
-        <div class="col-lg-6">
-          <div class="row gx-5 d-flex">
-            <div class="col-md-11">
-              <div class="shadow ratio ratio-1x1 rounded bg-cover bp-center align-self-end" style="background-image: url(img/new_photos/mem.png);--bs-aspect-ratio: 55%;">
-              </div>
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="ratio ratio-16x9 rounded bg-cover shadow" style="background-image: url(img/new_photos/mem.png);"></div>
             </div>
-            <div class="col-md-5 offset-md-1">
-              <div class="shadow ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end" style="background-image: url(img/new_photos/ksusha2.jpg);">
-              </div>
+            <div class="col-6">
+              <div class="ratio ratio-1x1 rounded bg-cover shadow" style="background-image: url(img/new_photos/ksusha2.jpg);"></div>
             </div>
-            <div class="col-md-6">
-              <div class="col-12 shadow ratio rounded bg-cover mt-5 bp-center" style="background-image: url(img/new_photos/call.JPG);--bs-aspect-ratio: 100%;">
-              </div>
+            <div class="col-6">
+              <div class="ratio ratio-1x1 rounded bg-cover shadow" style="background-image: url(img/new_photos/call.JPG);"></div>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <h4 class="py-4 border-dark" style="padding-bottom: 0 !important">
-            Боишься неправильно сказать? <br>Выглядеть глупо? Затупить и долго молчать?<br>Хочешь использовать умную лексику?
+        <div class="col-12 col-lg-6">
+          <h4 class="fw-bold mb-3" style="font-size: 1.3rem; font-weight: 500;">
+            Боишься неправильно сказать?<br>Выглядеть глупо? Затупить и долго молчать?<br>Хочешь использовать умную лексику?
           </h4>
-          <h4 class="py-4 border-dark" dstyle="padding-top: 10px !important; padding-bottom: 10px !important">
+          <h4 class="fw-bold mb-4" style="font-size: 1.3rem; font-weight: 500;">
             В разговорном клубе мы говорим Goodbye страхам и Hello — новому уровню!
           </h4>
-          <p style="font-size: 19px !important; padding-bottom: 10px !important">
+          <p style="font-size: 1.1rem;">
             Я — Ксюша Alive, коуч и преподавательница английского с опытом 7+ лет.
             Изучаю язык уже больше 18 лет, обучаюсь у коллег и работаю со студентами всех уровней.
-            <br>
-            Я понимаю все твои трудности и вижу «ошибки», как опыт, как движущую силу,
-            благодаря которой мы растем.
+            <br><br>
+            Я понимаю все твои трудности и вижу «ошибки», как опыт — движущую силу, благодаря которой мы растем.
           </p>
-          <div class="col">
-            <p style="font-size: 19px !important;">
-              Переходи на канал, чтобы познакомиться со мной поближе:
-            </p>
-          </div>
-          <div class="col" >
+
+          <p class="mt-3" style="font-size: 1.1rem;">
+            Переходи на канал, чтобы познакомиться со мной поближе:
+          </p>
+          <div class="d-flex align-items-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#d557cc" class="bi bi-telegram" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
             </svg>
-            <a class="ms-1 fw-bolder" href="https://t.me/+3weRs3PNhSc4NDVi" style="font-size: 19px !important;">
+            <a class="ms-2 fw-bold text-decoration-none" style="font-size: 1.1rem;" href="https://t.me/+3weRs3PNhSc4NDVi" target="_blank">
               ksush_a_live
             </a>
           </div>
-          <div class="text-center d-flex justify-content-center" style="padding-top: 40px !important;">
-            <a href="#tarifs" class="btn btn-primary px-5 py-3 shadow me-1 button-color">К тарифам</a>
+          <div class="text-center text-lg-start">
+            <a href="#tarifs" class="btn btn-primary px-4 py-2 shadow button-color">К тарифам</a>
           </div>
         </div>
       </div>
@@ -290,12 +300,13 @@
     </div>
   </div>
   <div class="container" id="info">
-    <div class="row py-vh-1">
+    <div class="row py-3">
       <div class="row d-flex justify-content-start justify-content-xs-center">
         <div class="col-lg-8">
           <h4>
             SPEAK.ENG THERAPY — это пространство, где
             мы лучше узнаем себя и мир вокруг, поднимая важные темы.
+            <br>
             <br>
             Наш клуб — это <span style="color: #d557cc">терапевтичные встречи</span> под руководством коуча, где ты:
           </h4>
@@ -304,19 +315,19 @@
       <div class="row d-flex align-items-center">
         <div class="col-md-6 col-lg-4">
           <span class="h5 fw-lighter">01.</span>
-          <p class="py-md-5 border-top border-dark" style="font-size: 22px !important">
+          <p class="py-md-3 border-top border-dark" style="font-size: 18px !important">
             Научишься выражать мысли легко и естественно, не задумываясь, без запинок и пауз
           </p>
         </div>
         <div class="col-md-6 col-lg-4 py-md-4 pb-0">
           <span class="h5 fw-lighter">02.</span>
-          <p class="py-md-5 border-top border-dark" style="font-size: 22px !important">
+          <p class="py-md-3 border-top border-dark" style="font-size: 18px !important">
             Сможешь уверенно использовать английский для своих целей: работа, отношения, переезд, обучение, путешествия, общение и так далее
           </p>
         </div>
         <div class="col-md-6 col-lg-4 py-md-6 pb-0">
           <span class="h5 fw-lighter">03.</span>
-          <p class="py-md-5 border-top border-dark" style="font-size: 22px !important">
+          <p class="py-md-3 border-top border-dark" style="font-size: 18px !important">
             Начнешь смело говорить в любой ситуации и с разными людьми, без страхов и комплексов
           </p>
         </div>
@@ -332,23 +343,19 @@
     </div>
   </div>
   <div class="bg-light w-100 overflow-hidden" id="testimonials">
-    <div class="container py-vh-6">
+    <div class="container py-4">
       <div class="row d-flex justify-content-center">
         <div class="col-12 col-lg-10 col-xl-8 text-center">
-          <h1 style="color: #d557cc">
+          <h1 style="color: #d557cc; font-size: 2rem;">
             Участницы рекомендуют!
           </h1>
-<!--          <p class="lead">-->
-<!--            Our spaces and offices are soooooo lovely,-->
-<!--            no one would give us a negative rating! And look at these trustworthy avatar pictures! Trust us!-->
-<!--          </p>-->
         </div>
         <div class="col-12 mt-4">
           <div class="row row-cols-1 row-cols-md-2 g-5 d-flex align-items-center">
-            <div class="col-12 col-lg-6 col-xl-4" >
+            <div class="col-12 col-lg-6 col-xl-4">
               <div class="card p-4 shadow mt-3 border-0">
                 <div class="card-body">
-                  <blockquote class="blockquote">
+                  <blockquote class="blockquote" style="font-size: 1.1rem;">
                     <p>
                       Какой преподаватель — такие и студенты!
                       Спасибо за практику, я волновалась, но все оказалось комфортно и интересно,
@@ -357,7 +364,7 @@
                   </blockquote>
                   <div class="d-flex border-top pt-3">
                     <img src="img/persons/maria.jpg" width="48" height="48" class="rounded-circle" alt="">
-                    <p class="card-text px-4">
+                    <p class="card-text px-4" style="font-size: 0.8rem;">
                       <span class="h6 fw-5">Мария</span><br>
                       <small class="text-muted">@mari.borele</small>
                     </p>
@@ -368,7 +375,7 @@
             <div class="col-12 col-lg-6 col-xl-4">
               <div class="card p-4 shadow mt-3 border-0">
                 <div class="card-body">
-                  <blockquote class="blockquote">
+                  <blockquote class="blockquote" style="font-size: 1.1rem;">
                     <p>
                       I feel so exited every time we have conversation in the club!
                       You give us so deep topics, really interesting to discuss.
@@ -376,7 +383,7 @@
                   </blockquote>
                   <div class="d-flex border-top pt-3">
                     <img src="img/persons/polina.jpg" width="48" height="48" class="rounded-circle" alt="">
-                    <p class="card-text px-4">
+                    <p class="card-text px-4" style="font-size: 0.8rem;">
                       <span class="h6 fw-5">Полина</span><br>
                       <small class="text-muted">@Outsiider</small>
                     </p>
@@ -387,7 +394,7 @@
             <div class="col-12 col-lg-6 col-xl-4">
               <div class="card p-4 shadow mt-3 border-0" >
                 <div class="card-body">
-                  <blockquote class="blockquote">
+                  <blockquote class="blockquote" style="font-size: 1.1rem;">
                     <p>
                       Спасибо тебе, было действительно интересно, тема огонь)
                       Было комфортно, в целом впечатления хорошие.
@@ -396,7 +403,7 @@
                   </blockquote>
                   <div class="d-flex border-top pt-3">
                     <img src="img/persons/olesya.jpg" width="48" height="48" class="rounded-circle" alt="">
-                    <p class="card-text px-4">
+                    <p class="card-text px-4" style="font-size: 0.8rem;">
                       <span class="h6 fw-5">Олеся</span><br>
                       <small class="text-muted">@olesya.troinova</small>
                     </p>
@@ -407,7 +414,7 @@
             <div class="col-12 col-lg-6 col-xl-4">
               <div class="card p-4 shadow mt-3 border-0">
                 <div class="card-body">
-                  <blockquote class="blockquote">
+                  <blockquote class="blockquote" style="font-size: 1.1rem;">
                     <p>
                       Это мой первый опыт участия в спикинг клабе, было комфортно!
                       Понравилось просто разговаривать с новыми людьми, мне не хватает такого опыта, пусть я и живу не в России.
@@ -415,7 +422,7 @@
                   </blockquote>
                   <div class="d-flex border-top pt-3">
                     <img src="img/persons/rita.jpg" width="48" height="48" class="rounded-circle" alt="">
-                    <p class="card-text px-4">
+                    <p class="card-text px-4" style="font-size: 0.8rem;">
                       <span class="h6 fw-5">Маргарита</span><br>
                       <small class="text-muted">@riit.w</small>
                     </p>
@@ -426,7 +433,7 @@
             <div class="col-12 col-lg-6 col-xl-4">
               <div class="card p-4 shadow mt-3 border-0">
                 <div class="card-body">
-                  <blockquote class="blockquote">
+                  <blockquote class="blockquote" style="font-size: 1.1rem;">
                     <p>
                       Мне все оч понравилось, тема супер.
                       Классно, что были вопросы, о которых я даже никогда и не думала!
@@ -435,7 +442,7 @@
                   </blockquote>
                   <div class="d-flex border-top pt-3">
                     <img src="img/persons/alena.jpg" width="48" height="48" class="rounded-circle" alt="">
-                    <p class="card-text px-4">
+                    <p class="card-text px-4" style="font-size: 0.8rem;">
                       <span class="h6 fw-5">Алёна</span><br>
                       <small class="text-muted">@jackwinslow</small>
                     </p>
@@ -446,14 +453,14 @@
             <div class="col-12 col-lg-6 col-xl-4">
               <div class="card p-4 shadow mt-3 border-0">
                 <div class="card-body">
-                  <blockquote class="blockquote">
+                  <blockquote class="blockquote" style="font-size: 1.1rem;">
                     <p>
                       Я воодушевлена, горжусь собой! Очень было комфортно и интересно.
                     </p>
                   </blockquote>
                   <div class="d-flex border-top pt-3">
                     <img src="img/persons/yulya.jpg" width="48" height="48" class="rounded-circle" alt="">
-                    <p class="card-text px-4">
+                    <p class="card-text px-4" style="font-size: 0.8rem;">
                       <span class="h6 fw-5">Юлия</span><br>
                       <small class="text-muted">@fraerka310</small>
                     </p>
@@ -467,11 +474,11 @@
     </div>
   </div>
   <div class="container" id="tarifs">
-    <div class="row py-vh-4">
-      <div class="row text-center gx-3 d-flex align-items-top">
-        <div class="col mb-4">
+    <div class="row py-vh-2">
+      <div class="row text-center gx-3 d-flex justify-content-center align-items-top">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card py-5 aos-init aos-animate shadow" style="background-color: rgba(213,87,204,0.09)">
-            <div class="card-body" >
+            <div class="card-body">
               <h3 class="card-title">Пробная встреча</h3>
               <small>₽ </small><span class="display-5"><s>950</s></span>
               <span class="display-3 fw-bold">390</span><br>
@@ -485,7 +492,7 @@
             </div>
           </div>
         </div>
-        <div class="col mb-4">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card py-5 aos-init aos-animate shadow" style="background-color: rgba(213,87,204,0.19)">
             <div class="card-body">
               <h3 class="card-title">Базовый тариф</h3>
@@ -503,7 +510,7 @@
             </div>
           </div>
         </div>
-        <div class="col mb-4">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card py-5 aos-init aos-animate shadow" style="background-color: rgba(213,87,213,0.27)">
             <div class="card-body">
               <h3 class="card-title">Тариф с обратной связью</h3>
@@ -525,13 +532,13 @@
       </div>
     </div>
   </div>
-  <div class="py-vh-2" id="form">
+  <div class="" id="form">
     <div class="position-relative bg-primary bg-cover bp-center" style="background-image: url(/img/form.jpg);">
 <!--      <div class="position-absolute w-100 h-100 opacity-75 bg-primary"></div>-->
       <div class="container">
-        <div class="row py-vh-5 position-relative d-flex justify-content-between align-items-center">
+        <div class="row py-vh-1 position-relative d-flex justify-content-between align-items-center">
           <div class="col-lg-5 text-white">
-            <p class="lead" style="font-size: 30px; font-weight: 500;">
+            <p class="lead" style="font-size: 26px; font-weight: 500;">
               Speaking — самый востребованный навык.
               <br>
               Другого способа его прокачать,
@@ -693,6 +700,7 @@
             .then(response => {
               if (response.ok) {
                 ym(100014198,'reachGoal','form_sent')
+                fbq('track', 'Lead', { name: nameInput.value, telegram, phone, type });
                 return { ok: "ok" }
               }
             })
